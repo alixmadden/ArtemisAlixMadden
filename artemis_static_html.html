@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artemis — Women's Sports Hub</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-blue-50 text-gray-900">
+  <header class="p-4 bg-white shadow">
+    <h1 class="text-2xl font-bold text-blue-700">Artemis — Women's Sports Hub</h1>
+    <p class="text-sm">Now, everyone CAN watch women's sports!</p>
+  </header>
+
+  <section class="p-4">
+    <div class="bg-red-600 text-white p-4 rounded-lg text-center text-lg font-bold">
+      LIMITED-TIME OFFER: Stream all women’s sports for <span class="line-through">$12.99</span> $7.99/mo!
+    </div>
+
+    <h2 class="mt-6 text-xl font-semibold">Top Stories</h2>
+    <div id="articles" class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4"></div>
+  </section>
+
+  <script>
+    const articles = [
+      {
+        title: "Caitlin Clark Breaks Rookie Records",
+        img: "https://cdn.bleacherreport.net/images/team_logos/328x328/wnba.png"
+      },
+      {
+        title: "Paige Bueckers Leads UConn in Stunning Victory",
+        img: "https://upload.wikimedia.org/wikipedia/commons/5/5f/UConn_Huskies_logo.svg"
+      },
+      {
+        title: "Simone Biles Debuts New Vault",
+        img: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Simone_Biles_Rio_2016d.jpg"
+      }
+    ];
+
+    const container = document.getElementById("articles");
+
+    articles.forEach(a => {
+      const card = document.createElement("article");
+      card.className = "bg-white p-4 rounded shadow";
+
+      card.innerHTML = `
+        <img src="${a.img}" alt="${a.title}" class="w-full h-40 object-cover rounded" />
+        <h3 class="mt-2 font-bold text-lg">${a.title}</h3>
+        <button class="mt-2 underline text-blue-700 text-sm">Read</button>
+      `;
+
+      container.appendChild(card);
+    });
+  </script>
+</body>
+</html>
